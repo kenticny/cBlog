@@ -1,0 +1,79 @@
+<%- include ../common/header.ejs %>
+<%- include ../common/nav.ejs %>
+	<div class="article-panel">
+		<div class="title"><%= article.title %></div>
+		<div class="pub-info">
+			<%
+				var time = new Date(article.pubTime);
+				var year = time.getFullYear();
+				var month = time.getMonth() + 1;
+				var date = time.getDate();
+				var hour = time.getHours();
+				var minute = time.getMinutes();
+				var second = time.getSeconds();
+				var pubTimeStr = year + "-" + month + "-" + date + " "
+							   + hour + ":" + minute + ":" + second;
+			%>
+			作者
+			<%= article.author.username %> 
+			发布于
+			<%= pubTimeStr %>
+			<%
+				if(user) {
+			%>
+			<span><a href="/blog/modify/<%= article._id %>">编辑</a></span>
+			<%
+				}
+			%>
+		</div>
+		<div><%- article.content %></div>
+		<hr />
+		<div class="comment-panel">
+			<div class="list">
+				<%
+					if(comments.length == 0) {
+				%>
+				<p class="notRelay">目前还没有回复，赶紧在下面回复了哦，亲！</p>
+				<%
+					}
+					for(var i = 0; i < comments.length; i++) {
+						var time = new Date(comments[i].postTime);
+						var year = time.getFullYear();
+						var month = time.getMonth() + 1;
+						var date = time.getDate();
+						var hour = time.getHours();
+						var minute = time.getMinutes();
+						var second = time.getSeconds();
+						var postTimeStr = year + "-" + month + "-" + date + " "
+									   + hour + ":" + minute + ":" + second;
+				%>
+				<div class="comment-item">
+					<div class="author">
+						<%= comments[i].author %> (<%= comments[i].ip %>) 回复于 <%= postTimeStr %>
+					</div>
+					<div class="content">
+						<%- comments[i].content %>
+					</div>
+				</div>
+				<%
+					}
+				%>
+			</div>
+			<hr />
+			<div class="add">
+				<form action="/comment/new" method="post" role="form">
+					<input type="hidden" name="articleId" value="<%= article._id %>" />
+					<div class="form-group">
+						<input type="text" name="author" placeholder="昵称" class="form-control author" />
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" name="content" placeholder="亲，请在这里回复(支持MarkDown语法)"></textarea>
+					</div>
+					<div class="button-group">
+						<input type="submit" class="btn btn-default" value="发布" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<%- include ../common/footer.ejs %>

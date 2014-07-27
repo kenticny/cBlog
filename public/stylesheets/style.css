@@ -1,0 +1,190 @@
+body {
+	background: url("/images/body-bg.jpg");
+	font-family: "Arial", "Microsoft YaHei", "微软雅黑";
+	padding-top: 55px;
+}
+
+/* Nav */
+.nav-menu {
+	float: right;
+	line-height: 50px;
+	text-decoration: none;
+	color: #fff;
+	margin: 0 20px;
+}
+
+.nav-menu:hover {
+	color: orange;
+	text-decoration: none;
+	transition: all .5s;
+}
+
+/* Home Page Blog List*/
+.blog-property {
+	margin: 10px 10% 10px 10px;
+	width: 25%;
+	float: right;
+}
+.article-list {
+	margin: 10px 0;
+	width: 55%;
+	float: right;
+}
+.article-item, .property-item {
+	padding: 40px;
+	width: 96%;
+	margin: 15px 2%;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 1px 1px #ccc;
+}
+.article-item .title {
+	padding-bottom: 20px;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #555;
+}
+.article-item .title:hover {
+	color: #333;
+	-webkit-transition: all .5s;
+}
+.article-item .abstract {
+	padding-bottom: 15px;
+	font-size: 1em;
+	color: #555;
+}
+.article-item .property {
+	padding-top: 15px;
+	border-top: 1px solid #ccc;
+	font-size: 12px;
+	font-family: 'Source Sans Pro', "sans-serif", "Microsoft YaHei", "微软雅黑";
+	color: #999;
+}
+.article-item .property span.postDate {
+	padding-right: 10px;
+}
+.article-item .property span:not(:first-child) {
+	padding: 0 10px;
+	border-left: 1px solid #ccc;
+}
+.article-item .tags {
+	color: #999;
+	padding-top: 15px;
+}
+.article-item i.glyphicon {
+	color: orange;
+}
+.property-item {
+	padding: 20px;
+}
+.property-item .photo img {
+	width: 100%;
+	border-radius: 18px;
+	border: 10px solid #eee;
+}
+.property-item .owner {
+	font-size: 25px;
+  color: #666;
+  text-shadow: 1px 1px 0px #aaa;
+  font-weight: bold;
+  padding: 5px;
+}
+.property-item .owner img {
+	width: 25px;
+	margin-left: 8px;
+}
+
+/* Create Or Modify Blog Page */
+.form-panel {
+	width: 50%;
+	height: 560px;
+	padding: 20px;
+	margin: 20px auto;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 1px 1px #ccc;
+}
+.form-panel textarea {
+	height: 300px;
+}
+/* Show Blog Page */
+.article-panel {
+	width: 70%;
+	margin: 20px auto;
+	padding: 35px;
+	border-radius: 4px;
+	box-shadow: 1px 1px #ccc;
+	background: #fff;
+}
+.article-panel .title {
+	font-size: 28px;
+	font-weight: bold;
+}
+.article-panel .pub-info {
+	font-size: 12px;
+	color: #999;
+	font-family: Arial, "Microsoft YaHei", "微软雅黑";
+	padding: 15px 0;
+}
+.article-panel .pub-info span{
+	margin-left: 15px;
+}
+
+/* Comment Area */
+.comment-panel {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 20px;
+}
+.comment-panel p.notRelay {
+	color: #ccc;
+}
+.comment-panel .author {
+	width: 100%;
+	font-size: 12px;
+	color: #999;
+}
+.comment-panel .comment-item {
+	margin: 20px 0;
+}
+.comment-panel .comment-item .content {
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 10px;
+	background: #f9f9f9;
+	border-radius: 4px;
+}
+
+/* Personal Information */
+
+.photo-panel, .info-panel {
+	float: right;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 1px 1px #ccc;
+	padding: 40px;
+}
+.photo-panel {
+	width: 23%;
+	margin: 20px 10% 20px 15px;
+}
+.photo-panel .button {
+	margin-top: 10px;
+	text-align: center;
+	letter-spacing: 10px;
+}
+.info-panel {
+	width: 53%;
+	margin: 20px 15px;
+}
+.info-panel textarea {
+	height: 150px;
+}
+
+/* Common */
+textarea {
+	resize: none;
+}
+.button-group {
+	text-align: right;
+}

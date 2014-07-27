@@ -1,0 +1,24 @@
+<%- include ../common/header.ejs %>
+<%- include ../common/nav.ejs %>
+	<div class="form-panel">
+		<form action="/blog/modify/<%= article._id %>" method="post" role="form">
+			<div class="form-group">
+				<label for="title">标题(Title)</label>
+				<input type="text" class="form-control" id="title" name="title" placeholder="请输入文章标题" value="<%= article.title %>" />
+			</div>
+			<div class="form-group">
+				<label for="content">内容(Article)</label>
+				<textarea name="content" id="content" class="form-control" placeholder="请输入文章内容"><%= article.content %></textarea>
+			</div>
+			<div class="form-group">
+				<label for="tags">标签(Tag)</label>
+				<input type="text" class="form-control" id="tags" name="tags" placeholder="输入标签，使用 “,” 分割" 
+						value="<%= article.tags.map(function(n) {return n.name; }).join(",") %>" />
+			</div>
+			<div class="button-group">
+				<input type="submit" class="btn btn-default" value="发布" />
+				<input type="button" class="btn btn-default" value="保存草稿" />
+			</div>
+		</form>
+	</div>
+<%- include ../common/footer.ejs %>

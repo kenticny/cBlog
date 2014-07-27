@@ -1,0 +1,38 @@
+<%- include common/header.ejs %>
+<%- include common/nav.ejs %>
+    <div class="blog-property">
+        <div class="property-item">
+            <div class="photo"><img src="/images/photo.png" /></div>
+            <div class="owner"><%= infoUser.displayName %><img src="/images/lu.png" /></div>
+            <div class="intro"><%- infoUser.intro || "" %></div>
+        </div>
+    </div>
+    <div class="article-list">
+        <%
+            for(var i = 0; i < list.length; i++) {
+        %>
+            <div class="article-item">
+                <div class="title"><a href="/blog/show/<%= list[i]._id %>"><%= list[i].title %></a></div>
+                <div class="abstract">
+                    <%- list[i].content %>
+                </div>
+                <div class="property">
+                    <%
+                        var date = new Date(list[i].pubTime);
+                        var dateStr = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+                    %>
+                    <span class="postDate"><i class="glyphicon glyphicon-calendar"></i> <%= dateStr %></span>
+                    <span><i class="glyphicon glyphicon-user"></i> <%= list[i].author.username %></span>
+                    <!--<span><i class="glyphicon glyphicon-thumbs-up"></i> 137</span>-->
+                    <span><i class="glyphicon glyphicon-comment"></i> <%= list[i].commentCount %> 回复</span>
+                </div>
+                <div class="tags">
+                    <i class="glyphicon glyphicon-tags"></i> 
+                    <%= list[i].tags.map(function(n) { return n.name; }).join(" , ") %>
+                </div>
+            </div>
+        <%
+            }
+        %>
+    </div>
+<%- include common/footer.ejs %>
