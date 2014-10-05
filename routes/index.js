@@ -7,12 +7,15 @@
 var User = require("./user");
 var Blog = require("./blog");
 var Comment = require("./comment");
+var Setting = require("./setting");
 
 module.exports = function(app) {
 
 	app.get("/", function(req, res) {
 		res.redirect("/home");
 	});
+
+	app.get("/settings", Setting.settingPage);
 
 	app.get("/user/login", User.loginPage);
 	app.post("/user/login", User.doLogin);

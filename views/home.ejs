@@ -9,6 +9,14 @@
     </div>
     <div class="article-list">
         <%
+            if(list.length == 0) {
+        %>
+            <div class="article-item">
+                现在还没有文章，<a href="/blog/new">赶快写一篇文章吧</a>
+            </div>
+        <%
+            }
+
             for(var i = 0; i < list.length; i++) {
         %>
             <div class="article-item">
